@@ -9,13 +9,13 @@ void quickSort(int *, int, int);
 int main() {
     int arr[] {1, 9, 2, 6, 8, 0, 7};
     for( auto i : arr) 
-        cout << i << endl;
+        cout << i << " ";
 
-    cout << "----------\n";
+    cout << "\n---------------\n";
     
     quickSort(arr, 0, 6);    
     for( auto i : arr) 
-        cout << i << endl;
+        cout << i << " ";
 
     cin.get();
     return 0;
