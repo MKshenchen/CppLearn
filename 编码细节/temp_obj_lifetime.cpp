@@ -7,12 +7,14 @@
 #include <iostream>
 using namespace std;
 
-const string& f(const string& s) {
+const string &f(const string &s)
+{
     return s;
 }
 
-int main() {
-    auto& res = f("?");
+int main()
+{
+    auto &res = f("?");
     // 以上代码等同于:
     // auto& res = f(string("?"));
     // 即调用string的构造函数将

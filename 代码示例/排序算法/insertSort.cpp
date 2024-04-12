@@ -5,15 +5,16 @@ using namespace std;
 // void swap(int *, int *);
 void insertSort(int *, int);
 
-int main() {
-    int arr[] {1, 9, 2, 6, 8, 0, 7};
-    for( auto i : arr) 
+int main()
+{
+    int arr[]{1, 9, 2, 6, 8, 0, 7};
+    for (auto i : arr)
         cout << i << " ";
 
     cout << "\n---------------\n";
 
     insertSort(arr, 7);
-    for( auto i : arr) 
+    for (auto i : arr)
         cout << i << " ";
 
     cin.get();
@@ -34,12 +35,14 @@ int main() {
 // }
 
 // 第二种
-void insertSort(int *arrPtr, int len) {
+void insertSort(int *arrPtr, int len)
+{
     int left, right, temp;
-    for(left = 1; left < len; left++) {
+    for (left = 1; left < len; left++)
+    {
         temp = arrPtr[left];
-        for(right = left; right > 0 && temp < arrPtr[right-1]; right--)
-            arrPtr[right] = arrPtr[right-1];
+        for (right = left; right > 0 && temp < arrPtr[right - 1]; right--)
+            arrPtr[right] = arrPtr[right - 1];
         arrPtr[right] = temp;
     }
 }

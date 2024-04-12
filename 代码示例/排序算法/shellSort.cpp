@@ -5,15 +5,16 @@ using namespace std;
 // void swap(int *, int *);
 void shellSort(int *, int);
 
-int main() {
-    int arr[] {1, 9, 2, 6, 8, 0, 7};
-    for( auto i : arr) 
+int main()
+{
+    int arr[]{1, 9, 2, 6, 8, 0, 7};
+    for (auto i : arr)
         cout << i << " ";
 
     cout << "\n---------------\n";
 
     shellSort(arr, 7);
-    for( auto i : arr) 
+    for (auto i : arr)
         cout << i << " ";
 
     cin.get();
@@ -39,15 +40,19 @@ int main() {
 // }
 
 // 第二种
-void shellSort(int *arrPtr, int len) {
+void shellSort(int *arrPtr, int len)
+{
     int step = 1;
-    while(step < len / 3) step = step * 3 + 1;
-    while(step) {
+    while (step < len / 3)
+        step = step * 3 + 1;
+    while (step)
+    {
         int left, right, temp;
-        for(left = step; left < len; left++) {
+        for (left = step; left < len; left++)
+        {
             temp = arrPtr[left];
-            for(right = left; right >= step && temp < arrPtr[right-step]; right -= step)
-                arrPtr[right] = arrPtr[right-step];
+            for (right = left; right >= step && temp < arrPtr[right - step]; right -= step)
+                arrPtr[right] = arrPtr[right - step];
             arrPtr[right] = temp;
         }
         step /= 3;
