@@ -2,24 +2,34 @@
 
 using namespace std;
 
-void merge(int *, int, int, int, int *);
-void devide(int *, int, int, int *);
-void mergeSort(int *, int);
+void showUnderLine();
+void showArrayElement(int *arrPtr, int arrLen);
+void merge(int *arrPtr, int left, int mid, int right, int *temp);
+void devide(int *arrPtr, int left, int right, int *temp);
+void mergeSort(int *arrPtr, int arrLen);
 
 int main()
 {
     int arr[]{1, 9, 2, 6, 8, 0, 7};
-    for (auto i : arr)
-        cout << i << " ";
-
-    cout << "\n---------------\n";
-
+    showArrayElement(arr, 7);
     mergeSort(arr, 7);
-    for (auto i : arr)
-        cout << i << " ";
+    showArrayElement(arr, 7);
 
     cin.get();
     return 0;
+}
+
+void showUnderLine()
+{
+    cout << "\n---------------\n";
+}
+
+void showArrayElement(int *arrPtr, int arrLen)
+{
+    for (int i = 0; i < arrLen; i++)
+        cout << arrPtr[i] << " ";
+
+    showUnderLine();
 }
 
 void merge(int *arrPtr, int left, int mid, int right, int *temp)
@@ -46,9 +56,9 @@ void devide(int *arrPtr, int left, int right, int *temp)
     merge(arrPtr, left, mid, right, temp);
 }
 
-void mergeSort(int *arrPtr, int len)
+void mergeSort(int *arrPtr, int arrLen)
 {
-    int *temp = (int *)malloc(sizeof(int) * len);
-    devide(arrPtr, 0, len - 1, temp);
+    int *temp = (int *)malloc(sizeof(int) * arrLen);
+    devide(arrPtr, 0, arrLen - 1, temp);
     free(temp);
 }
